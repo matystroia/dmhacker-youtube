@@ -15,7 +15,7 @@ for (var i in mkdirs) {
   }
 }
 
-app.set('port', (process.env.OPENSHIFT_NODEJS_PORT || 5000));
+app.set('port', (process.env.PORT || 5000));
 
 app.use(express.static(__dirname + '/public'));
 
