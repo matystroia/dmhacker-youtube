@@ -41,7 +41,7 @@ app.get('/alexa-search/:query', function(req, res) {
     maxResults: 1,
     type: 'video',
     relevanceLanguage: lang,
-    key: process.env.YOUTUBE_API_KEY
+    key: 'AIzaSyCK-WSHih488vqCr8MHL8kb1eEt7SoPRsE'
   }, function(err, results) {
     if (err) {
       console.log('An error occurred: '+err.message);
@@ -77,6 +77,7 @@ app.get('/alexa-search/:query', function(req, res) {
 
         // When the writer finishes, pipe output to ffmpeg for final processing
         writer.on('finish', function() {
+          console.log('Finished writing mp4.')
           ffmpeg(tmp_url)
             .format("mp3")
             .audioBitrate(128) // Alexa supports this bitrate
@@ -173,7 +174,7 @@ app.get('/search/:query', function(req, res) {
   ytsearch(query, {
     maxResults: 1,
     type: 'video',
-    key: process.env.YOUTUBE_API_KEY
+    key: 'AIzaSyCK-WSHih488vqCr8MHL8kb1eEt7SoPRsE'
   }, function(err, results) {
     if (err) {
       res.status(500).json({
