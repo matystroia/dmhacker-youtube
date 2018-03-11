@@ -12,7 +12,7 @@
     "dependencies": {
         "ejs": "2.5.7",
         "express": "4.16.2",
-        "ytdl-core": "0.20.1",
+        "ytdl-core": "0.20.2",
         "fluent-ffmpeg": "2.1.2",
         "youtube-search": "1.0.10"
     },
